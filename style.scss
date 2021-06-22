@@ -1,8 +1,3 @@
-/*
-	The following mixin is taken and edited from this pen - https://codepen.io/hugo/pen/xzjGB
-	I have added outlineColor to allow the addition of a text-shadow outline for the text.
- */
-
 @function pow($number, $exp) {
     $value: 1;
     @if $exp>0 {

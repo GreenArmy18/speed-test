@@ -28,10 +28,30 @@
     <div class="headingWrapper">
         <a href="" class="header header--raiseUp">Average Speed Tests</a>
     </div>
-
-    <canvas id="myChart" width="350" height="150"></canvas>
+    <div id="container">
+        <canvas id="myChart" width="800" height="600"></canvas>
+    </div>
+    <!-- <canvas id="myChart" width="350" height="150">HI</canvas>-->
 
     <script>
+        (function() {
+            // We are resizing for mobile devices only. For other devices, the
+            // dimensions will be stuck at 800 * 600. To change the default dimensions,
+            // change the height and width of the canvas and the width of the #container
+            var win = window,
+                doc = document,
+                w = win.innerWidth,
+                h = win.innerHeight,
+                container = doc.getElementById('container'),
+                canvas = doc.getElementById('myChart');
+
+            if (win.navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/i)) {
+                canvas.height = h;
+                canvas.width = w;
+            }
+        })();
+
+
         window.addEventListener('load', setup);
 
         async function setup() {
